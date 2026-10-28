@@ -1,11 +1,11 @@
 # Daily Data
 date,commands,input_tokens,output_tokens,saved_tokens,savings_pct,total_time_ms,avg_time_ms
-2026-10-28,10,492,151,350,71.14,6430,643
+2026-10-28,19,976,342,651,66.70,10359,545
 
 # Weekly Data
 week_start,week_end,commands,input_tokens,output_tokens,saved_tokens,savings_pct,total_time_ms,avg_time_ms
-2026-10-26,2026-11-01,10,492,151,350,71.14,6430,643
+2026-10-26,2026-11-01,19,976,342,651,66.70,10359,545
 
 # Monthly Data
 month,commands,input_tokens,output_tokens,saved_tokens,savings_pct,total_time_ms,avg_time_ms
-2026-10,10,492,151,350,71.14,6430,643
+2026-10,19,976,342,651,66.70,10359,545
