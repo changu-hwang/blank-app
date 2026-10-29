@@ -1,6 +1,11 @@
-# 🎈 Blank app template
+# 💬 카카오톡 대화 정리 (Streamlit)
 
-A simple Streamlit app template for you to modify!
+카카오톡 '대화 내용 내보내기' 파일(txt/csv)을 업로드하면 대화를 정리합니다.
+
+- 지원 형식: PC(Windows/Mac) txt, Android txt, iOS txt, 모바일 csv (UTF-8/CP949)
+- 기능: 기간·참여자·키워드 필터, 참여자별/일자별/시간대별 통계, 할 일 후보(규칙 기반) 추출, 개인정보 마스킹, 엑셀 내보내기
+- AI 요약(선택): Claude API로 핵심 요약·결정사항·할 일·미결사항 보고서 생성. `.streamlit/secrets.toml`에 `ANTHROPIC_API_KEY = "..."`를 설정하거나 화면에서 키 입력
+  - 필터가 적용된 대화가 외부 API로 전송되므로, 마스킹 옵션과 소속 기관 보안 지침을 확인하세요.
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
 

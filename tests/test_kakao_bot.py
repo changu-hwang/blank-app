@@ -1,4 +1,4 @@
-from unittest.mock import AsyncMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 
 from fastapi.testclient import TestClient
 
@@ -42,7 +42,7 @@ def test_token_required(monkeypatch):
 
 
 def test_callback_ack_and_delivery():
-    with patch("kakao_bot.app.httpx.AsyncClient.post", new_callable=AsyncMock) as post:
+    with patch("kakao_bot.app.httpx.AsyncClient.post", new_callable=AsyncMock, return_value=MagicMock()) as post:
         body = client.post("/skill/callback", json=_payload("안녕", "https://bot-api.kakao.com/cb/123")).json()
     assert body["useCallback"] is True
     url = post.call_args.args[0]
