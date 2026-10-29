@@ -52,7 +52,10 @@ def _parse_csv(text: str) -> pd.DataFrame:
             dt = datetime.fromisoformat((rec.get("Date") or "").strip())
         except ValueError:
             continue
-        rows.append((dt, (rec.get("User") or "").strip(), rec.get("Message") or ""))
+        user = (rec.get("User") or "").strip()
+        if not user:
+            continue  # 발신자 없는 시스템 메시지 (예: "Chat Loss")
+        rows.append((dt, user, rec.get("Message") or ""))
     return pd.DataFrame(rows, columns=COLUMNS)
 
 

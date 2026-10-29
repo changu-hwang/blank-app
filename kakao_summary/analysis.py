@@ -41,7 +41,8 @@ def filter_df(
 
 
 def is_media(msg: str) -> bool:
-    return msg.strip() in _MEDIA or bool(re.fullmatch(r"사진 \d+장", msg.strip()))
+    m = msg.strip()
+    return m in _MEDIA or bool(re.fullmatch(r"사진 \d+장|파일: .+", m))
 
 
 def user_stats(df: pd.DataFrame) -> pd.DataFrame:

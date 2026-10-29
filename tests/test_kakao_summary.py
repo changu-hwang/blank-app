@@ -26,6 +26,7 @@ IOS_TXT = """2026. 10. 19. 오후 3:40, 홍길동 : 아이폰 메시지
 CSV = """Date,User,Message
 2026-10-19 09:01:00,"홍길동","안녕하세요"
 2026-10-19 13:15:00,"김철수","검토 요청드립니다"
+2026-10-19 13:20:00,"","Chat Loss"
 """
 
 
@@ -69,3 +70,9 @@ def test_analysis():
 def test_mask_pii():
     s = mask_pii("메일 a.b@test.co.kr, 주민 900101-1234567, 계좌 110-123-456789")
     assert "[이메일]" in s and "[주민번호]" in s and "[계좌번호]" in s
+
+
+def test_file_message_is_media():
+    from kakao_summary.analysis import is_media
+    assert is_media("파일: 일정표_10월.pdf")
+    assert not is_media("파일 보내주세요")
