@@ -5,6 +5,8 @@
 
 **Always prefix commands with `rtk`**. If RTK has a dedicated filter, it uses it. If not, it passes through unchanged. This means RTK is always safe to use.
 
+**Exception**: If `rtk` is not installed (e.g. `rtk: command not found` in cloud sessions), run the same command without the `rtk` prefix.
+
 **Important**: Even in command chains with `&&`, use `rtk`:
 ```bash
 # ❌ Wrong
